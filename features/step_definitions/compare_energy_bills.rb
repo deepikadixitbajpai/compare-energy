@@ -113,6 +113,8 @@ end
 And(/^I enter following  details in gas energy page$/) do |table|
   table.hashes.each do |hash|
     puts hash
+    @gas_page.tarrif_type.select(hash['current_tarrif'])
+    @gas_page.payment_method.select(hash['payment_method'])
     @gas_page.not_main_heating_source.click
     @gas_page.kwh_usage.click
     @gas_page.kwh_spend.set hash['kwh_spend']
