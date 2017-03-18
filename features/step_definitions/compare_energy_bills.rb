@@ -1,5 +1,5 @@
 Given(/^I am on Compare Energy link in Compare market website$/) do
-  @page = Page.new
+  @page = CompareEnergy::Page.new
   @energy_supplier_page = @page.supplier
   @energy_supplier_page.load
   expect(@energy_supplier_page).to be_displayed
