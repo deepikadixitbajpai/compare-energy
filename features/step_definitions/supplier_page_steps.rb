@@ -7,32 +7,15 @@ end
 
 When(/^I enter following  details in supplier page$/) do |table|
   table.hashes.each do |hash|
-    # @energy_supplier_page.postcode.set hash['postcode']
-    # @energy_supplier_page.find_postcode.click
     @energy_supplier_page.search_post_code(hash['postcode'])
-    if hash['have_bill'] == "yes"
-      @energy_supplier_page.have_bill.click
-    else
-      @energy_supplier_page.not_have_bill.click
-    end
-
-    @energy_supplier_page.compare_gas_electricity.click
-    @energy_supplier_page.different_electricity_gas_supplier.click if hash['same_supplier']
-    # @energy_supplier_page.select_electricity_provider(hash['elec_supplier'])
-    # @energy_supplier_page.select_gas_provider(hash['gas_supplier'])
-    if hash['elec_supplier'] == 'NPower'
-      @energy_supplier_page.elec_npower.click
-    else
-      @energy_supplier_page.dont_know_electricity_supplier.click
-    end
-    if hash['gas_supplier'] == 'British Gas'
-      @energy_supplier_page.british_gas.click
-    else
-      @energy_supplier_page.dont_know_gas_supplier.click
-    end
+    @energy_supplier_page.have_bill_handy(hash['have_bill'])
+    @energy_supplier_page.compare(hash['compare'])
+    @energy_supplier_page.same_supplier(hash['same_supplier']) if hash['same_supplier']
+    @energy_supplier_page.select_electricity_provider(hash['elec_supplier'])
+    @energy_supplier_page.select_gas_provider(hash['gas_supplier'])
   end
 end
 
 When(/^I go to next page$/) do
-  @energy_supplier_page.next.click
+  @energy_supplier_page.go_to_next_page
 end

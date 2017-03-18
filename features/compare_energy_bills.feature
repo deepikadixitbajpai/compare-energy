@@ -6,8 +6,8 @@ Feature: As a end user of compare market
  Scenario: Compare both Electricity and Gas bills when user have bill and suggest the best deal
     Given I am on Compare Energy link in Compare market website
     And I enter following  details in supplier page
-     |postcode|have_bill|comparison_of      |same_supplier| elec_supplier|gas_supplier|
-     |PE2 6YS |yes      |electricity and gas| no          |NPower        |British Gas |
+     |postcode|have_bill|compare          |same_supplier| elec_supplier|gas_supplier|
+     |PE2 6YS |yes      |Gas & Electricity| no          |npower        |British Gas |
     And I go to next page
     And I should be in Electricity Energy page
     And I enter following  details in electricity energy page
@@ -31,8 +31,8 @@ Feature: As a end user of compare market
   Scenario: Compare both Electricity and Gas bills when user doesn't have bill and suggest the best deal
    Given I am on Compare Energy link in Compare market website
    And I enter following  details in supplier page
-     |postcode|have_bill|comparison_of      | elec_supplier|gas_supplier|
-     |PE2 6YS |no       |electricity and gas|NPower        |British Gas |
+     |postcode|have_bill|compare            | elec_supplier|gas_supplier|
+     |PE2 6YS |no       |Gas & Electricity  |npower        |British Gas |
    And I go to next page
    And I should be in Energy page
    And I enter following  details in energy page
@@ -52,8 +52,8 @@ Feature: As a end user of compare market
   Scenario: Compare both Electricity and Gas bills when user doesn't know much details and suggest the best deal
     Given I am on Compare Energy link in Compare market website
     And I enter following  details in supplier page
-      |postcode|have_bill|comparison_of      | elec_supplier|gas_supplier|
-      |PE2 6YS |no       |electricity and gas| I don't know |I don't know|
+      |postcode|have_bill|compare          | elec_supplier|gas_supplier|
+      |PE2 6YS |no       |Gas & Electricity| I don't know |I don't know|
     And I go to next page
     And I should be in Energy page
     And I enter following  details in energy page
