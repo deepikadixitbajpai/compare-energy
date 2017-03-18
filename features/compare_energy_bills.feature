@@ -8,7 +8,7 @@ Feature: As a end user of compare market
     And I enter following  details in supplier page
      |postcode|have_bill|comparison_of      |same_supplier| elec_supplier|gas_supplier|
      |PE2 6YS |yes      |electricity and gas| no          |NPower        |British Gas |
-    And I click to next page
+    And I go to next page
     And I should be in Electricity Energy page
     And I enter following  details in electricity energy page
      |tariff_type     |economy_7| payment_method        | main_heating_source| kwh_usage|day_spend|night_spend|
@@ -20,7 +20,7 @@ Feature: As a end user of compare market
      |Fixed Price December 2017|Quarterly Direct Debit|no                 |yes      |300      |
    And I click on next page button in gas page
    And I should be in your preferences page
-   And I enter following  details in your details page
+   And I enter following  details in your preferences page
      |fixed_tariff|payment_mode          |email_id   | agree_terms|
      |yes         |quarterly_direct_debit|foo@bar.com| yes        |
    And I click on prices button
@@ -33,14 +33,14 @@ Feature: As a end user of compare market
    And I enter following  details in supplier page
      |postcode|have_bill|comparison_of      | elec_supplier|gas_supplier|
      |PE2 6YS |no       |electricity and gas|NPower        |British Gas |
-   And I click to next page
+   And I go to next page
    And I should be in Energy page
    And I enter following  details in energy page
      |pre_payment_meter|economy_7|elec_spend|elec_spend_period|gas_spend|gas_spend_period|
      | yes             |no       |120       | Quarterly       |300      |Annually        |
    And I click on next page button in energy page
    And I should be in your preferences page
-   And I enter following  details in your details page
+   And I enter following  details in your preferences page
      |fixed_tariff|email_id   | agree_terms|
      |yes         |foo@bar.com| yes        |
    And I click on prices button
@@ -54,7 +54,7 @@ Feature: As a end user of compare market
     And I enter following  details in supplier page
       |postcode|have_bill|comparison_of      | elec_supplier|gas_supplier|
       |PE2 6YS |no       |electricity and gas| I don't know |I don't know|
-    And I click to next page
+    And I go to next page
     And I should be in Energy page
     And I enter following  details in energy page
       |pre_payment_meter|economy_7|elec_spend  |gas_spend     |
@@ -66,7 +66,7 @@ Feature: As a end user of compare market
       | two |4     |electricity         | Temperate  |Wafer thin|Gas                |Hardly  |
     And I click on next page button in energy usage page
     And I should be in your preferences page
-    And I enter following  details in your details page
+    And I enter following  details in your preferences page
       |fixed_tariff|email_id   | agree_terms|
       |yes         |foo@bar.com| yes        |
     And I click on prices button
