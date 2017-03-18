@@ -16,8 +16,8 @@ Feature: As a end user of compare market
    And I click on next page button in electricity page
    And I should be in Gas Energy page
    And I enter following  details in gas energy page
-     |current_tarrif           |payment_method        |main_heating_source|kwh_usage|kwh_spend|
-     |Fixed Price December 2017|Quarterly Direct Debit|no                 |yes      |300      |
+     |current_tarrif           |payment_method        |main_heating_source|current_usage|spend    |spend_period|
+     |Fixed Price December 2017|Quarterly Direct Debit|no                 |kWh          |300      |Annually    |
    And I click on next page button in gas page
    And I should be in your preferences page
    And I enter following  details in your preferences page
