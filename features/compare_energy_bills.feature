@@ -1,5 +1,5 @@
 Feature: As a end user of compare market
-  I want to be compare my energy bills
+  I want to compare my energy bills
   so that I can get the comparison result
 
 
@@ -7,7 +7,7 @@ Feature: As a end user of compare market
     Given I am on Compare Energy link in Compare market website
     And I enter following  details in supplier page
      |postcode|have_bill|comparison_of      |same_supplier| elec_supplier|gas_supplier|
-     |PE2 6YS |yes      |electricity and gas| no          |nPower        |British Gas |
+     |PE2 6YS |yes      |electricity and gas| no          |NPower        |British Gas |
     And I click to next page
     And I should be in Electricity Energy page
     And I enter following  details in electricity energy page
@@ -27,12 +27,12 @@ Feature: As a end user of compare market
    Then I should be in Results page with heading "Current tariff and usage"
    And I should get the best results in "Your Results"
 
-
+  @now
   Scenario: Compare both Electricity and Gas bills when user doesn't have bill and suggest the best deal
    Given I am on Compare Energy link in Compare market website
    And I enter following  details in supplier page
      |postcode|have_bill|comparison_of      | elec_supplier|gas_supplier|
-     |PE2 6YS |no       |electricity and gas|nPower        |British Gas |
+     |PE2 6YS |no       |electricity and gas|NPower        |British Gas |
    And I click to next page
    And I should be in Energy page
    And I enter following  details in energy page
@@ -48,7 +48,7 @@ Feature: As a end user of compare market
    And I should get the best results in "Your Results"
 
 
-  @now
+
   Scenario: Compare both Electricity and Gas bills when user doesn't know much details and suggest the best deal
     Given I am on Compare Energy link in Compare market website
     And I enter following  details in supplier page

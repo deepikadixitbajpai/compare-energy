@@ -7,8 +7,9 @@ end
 
 And(/^I enter following  details in supplier page$/) do |table|
   table.hashes.each do |hash|
-    @energy_supplier_page.postcode.set hash['postcode']
-    @energy_supplier_page.find_postcode.click
+    # @energy_supplier_page.postcode.set hash['postcode']
+    # @energy_supplier_page.find_postcode.click
+    @energy_supplier_page.search_post_code(hash['postcode'])
     if hash['have_bill'] == "yes"
       @energy_supplier_page.have_bill.click
     else
@@ -17,7 +18,8 @@ And(/^I enter following  details in supplier page$/) do |table|
 
     @energy_supplier_page.compare_gas_electricity.click
     @energy_supplier_page.different_electricity_gas_supplier.click if hash['same_supplier']
-    if hash['elec_supplier'] == 'nPower'
+    #@energy_supplier_page.select_electricity_provider(hash['elec_supplier'])
+    if hash['elec_supplier'] == 'NPower'
       @energy_supplier_page.elec_npower.click
     else
       @energy_supplier_page.dont_know_electricity_supplier.click
@@ -165,7 +167,6 @@ Then(/^I should be in Results page with heading "([^"]*)"$/) do |arg1|
 end
 
 Then(/^I should get the best results in "([^"]*)"$/) do |arg1|
-  @results_page.wait_for_results_heading(10)
   expect(@results_page.results_heading.text).to eql(arg1)
 end
 

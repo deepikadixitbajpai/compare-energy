@@ -1,5 +1,4 @@
 module CompareEnergy
-
   class Page
     def supplier
       YourSupplier.new

@@ -19,11 +19,3 @@ Capybara.register_driver :chrome do |app|
 SitePrism.configure do |config|
   config.use_implicit_waits = true
 end
-
-# Before do |scenario|
-#   @browser = browser
-# end
-
-After do |scenario|
-  page.driver.quit
-end

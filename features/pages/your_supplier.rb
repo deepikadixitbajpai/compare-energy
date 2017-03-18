@@ -2,14 +2,37 @@ module CompareEnergy
   class YourSupplier < SitePrism::Page
     set_url "https://energy.comparethemarket.com/energy/v2/?AFFCLIE=TSTT"
 
-    element :postcode, :xpath, "//*[@id='your-postcode']"
-    element :find_postcode, :xpath, "//*[@id='find-postcode']"
+    def search_post_code(postcodeValue)
+      postcode.set postcodeValue
+      find_postcode.click
+    end
 
-    element :have_bill, :xpath, "//*[@id='have-bill-label']/span/span"
-    element :not_have_bill, :xpath, "//*[@id='no-bill-label']/span/span"
-    element :compare_gas_electricity, :xpath, "//*[@id='compare-both-label']/span/span"
-    element :compare_gas, :xpath, "//*[@id='compare-gas-label']/span/span"
-    element :compare_electricity, :xpath, "//*[@id='compare-electricity-label']/span/span"
+    def select_electricity_provider(providerName)
+      select_provider(top_six_electricity_provider, providerName)
+    end
+
+    def select_gas_provider(providerName)
+      select_provider(top_six_gas_provider, providerName)
+    end
+
+    private
+    element :postcode, "#your-postcode"
+    element :find_postcode, "#find-postcode"
+    elements :top_six_electricity_provider, "label[for^='electricity-top-six-']"
+    elements :top_six_gas_provider, "label[for^='gas-top-six-']"
+
+    def select_provider(providers, providerName)
+      provider = providers.detect {|provider| provider[:'supplier-name'] == providerName}
+      provider.click unless provider.nil?
+    end
+
+    public
+
+    element :have_bill, "#have-bill-label"
+    element :not_have_bill, "#no-bill-label"
+    element :compare_gas_electricity, "#compare-both-label"
+    element :compare_gas, "#compare-gas-label"
+    element :compare_electricity, :xpath, "#compare-electricity-label"
 
     element :same_electricity_gas_supplier, :xpath, "//*[@id='same-supplier-question']/div/div/label[1]/span"
     element :different_electricity_gas_supplier, :xpath, "//*[@id='same-supplier-question']/div/div/label[2]/span"
