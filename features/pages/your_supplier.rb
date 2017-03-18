@@ -16,11 +16,25 @@ class YourSupplier < SitePrism::Page
 
   #section :electricity_supplier, SupplierOptions, "#elec-energy-suppliers-question"
   #elements :electricity_supplier, :xpath, "//*[@id='elec-energy-suppliers-question']/div/div/div[1]"
-  element :dont_know_electricity_supplier, "select[id='electricity-supplier-dont-know']"
+  element :elec_british_gas, :xpath, "//*[@id='elec-energy-suppliers-question']/div/div/div[1]/label[1]/span/span"
+  element :elec_edf_energy, :xpath, "//*[@id='elec-energy-suppliers-question']/div/div/div[1]/label[2]/span/span"
+  element :elec_eon, :xpath, "//*[@id='elec-energy-suppliers-question']/div/div/div[1]/label[3]/span/span"
+  element :elec_npower, :xpath, "//*[@id='elec-energy-suppliers-question']/div/div/div[1]/label[4]/span/span"
+  element :elec_scottish_power, :xpath, "//*[@id='elec-energy-suppliers-question']/div/div/div[1]/label[5]/span/span"
+  element :elec_sse, :xpath, "//*[@id='elec-energy-suppliers-question']/div/div/div[1]/label[6]/span/span"
+  element :elec_other_options, "select[id='sel1']"
+  element :dont_know_electricity_supplier, :xpath, "//*[@id='elec-energy-suppliers-question']/div/div/div[2]/label/span"
 
   #section :gas_supplier, SupplierOptions, "#gas-energy-suppliers-question"
   #elements :gas_supplier, :xpath, "//*[@id='gas-energy-suppliers-question']/div/div/div[1]"
-  element :dont_know_gas_supplier, "select[id='gas-supplier-dont-know']"
+  element :british_gas, :xpath, "//*[@id='gas-energy-suppliers-question']/div/div/div[1]/label[1]/span/span"
+  element :edf_energy, :xpath, "//*[@id='gas-energy-suppliers-question']/div/div/div[1]/label[2]/span/span"
+  element :eon, :xpath, "//*[@id='gas-energy-suppliers-question']/div/div/div[1]/label[3]/span/span"
+  element :npower, :xpath, "//*[@id='gas-energy-suppliers-question']/div/div/div[1]/label[4]/span/span"
+  element :scottish_power, :xpath, "//*[@id='gas-energy-suppliers-question']/div/div/div[1]/label[5]/span/span"
+  element :sse, :xpath, "//*[@id='gas-energy-suppliers-question']/div/div/div[1]/label[6]/span/span"
+  element :other_options, "select[id='sel2']"
+  element :dont_know_gas_supplier, :xpath, "//*[@id='gas-energy-suppliers-question']/div/div/div[2]/label/span"
 
   element :next, :xpath, "//*[@id='goto-your-supplier-details']"
 

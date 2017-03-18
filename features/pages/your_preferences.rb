@@ -1,5 +1,6 @@
 
-class YourDetails < SitePrism::Page
+class YourPreferences < SitePrism::Page
+  element :heading, :xpath, "/html/body/div/div/main/div/div/h2"
   element :fixed_tariff, :xpath, "//*[@id='tariff-selection-question']/div/label[1]/span/span"
   element :variable_tariff, :xpath, "//*[@id='tariff-selection-question']/div/label[2]/span/span"
   element :all_tariff, :xpath, "//*[@id='tariff-selection-question']/div/label[3]/span/span"
