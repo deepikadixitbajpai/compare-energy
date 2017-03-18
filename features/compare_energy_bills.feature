@@ -2,7 +2,7 @@ Feature: As a end user of compare market
   I want to compare my energy bills
   so that I can get the comparison result
 
-
+@now
  Scenario: Compare both Electricity and Gas bills when user have bill and suggest the best deal
     Given I am on Compare Energy link in Compare market website
     And I enter following  details in supplier page
@@ -11,8 +11,8 @@ Feature: As a end user of compare market
     And I go to next page
     And I should be in Electricity Energy page
     And I enter following  details in electricity energy page
-     |tariff_type     |economy_7| payment_method        | main_heating_source| kwh_usage|day_spend|night_spend|
-     |Juice           |yes      | Pay On Receipt Of Bill| yes                | yes      |40       |20         |
+     |tariff_type     |economy_7| payment_method        | main_heating_source| usage    |day_spend|day_spend_period|night_spend|
+     |Juice           |yes      | Pay On Receipt Of Bill| yes                | kwh      |40       |Annually       |20         |
    And I click on next page button in electricity page
    And I should be in Gas Energy page
    And I enter following  details in gas energy page
