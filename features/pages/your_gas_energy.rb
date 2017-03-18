@@ -1,5 +1,9 @@
 module CompareEnergy
   class YourGas < SitePrism::Page
+    def initialize
+      wait_for_heading
+    end
+
     element :heading, :xpath, "/html/body/div/div/main/section[2]/h2"
     element :tarrif_type, "select[id='gas-tariff-additional-info']"
     element :payment_method, "select[id='gas-payment-method-dropdown-link']"

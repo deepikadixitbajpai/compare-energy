@@ -1,5 +1,8 @@
 module CompareEnergy
   class YourPreferences < SitePrism::Page
+    def initialize
+      wait_for_heading
+    end
     element :heading, :xpath, "/html/body/div/div/main/div/div/h2"
     element :fixed_tariff, :xpath, "//*[@id='tariff-selection-question']/div/label[1]/span/span"
     element :variable_tariff, :xpath, "//*[@id='tariff-selection-question']/div/label[2]/span/span"

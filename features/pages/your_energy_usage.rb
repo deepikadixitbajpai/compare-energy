@@ -1,5 +1,10 @@
 module CompareEnergy
   class YourEnergyUsage < SitePrism::Page
+
+    def initialize
+      wait_for_heading
+    end
+
     element :heading, :xpath, "/html/body/div/div/main/h2"
 
     element :two_bed, :xpath, "//*[@id='how-big-is-your-home']/div/div/label[1]/span/span"

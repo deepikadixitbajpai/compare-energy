@@ -18,7 +18,8 @@ And(/^I enter following  details in supplier page$/) do |table|
 
     @energy_supplier_page.compare_gas_electricity.click
     @energy_supplier_page.different_electricity_gas_supplier.click if hash['same_supplier']
-    #@energy_supplier_page.select_electricity_provider(hash['elec_supplier'])
+    # @energy_supplier_page.select_electricity_provider(hash['elec_supplier'])
+    # @energy_supplier_page.select_gas_provider(hash['gas_supplier'])
     if hash['elec_supplier'] == 'NPower'
       @energy_supplier_page.elec_npower.click
     else
@@ -38,7 +39,7 @@ end
 
 When(/^I should be in Electricity Energy page$/) do
   @electricity_page = @page.electrical_energy
-  #assesrtion for heading
+  expect(@electricity_page.heading.text).to eql('Electricity')
 end
 
 And(/^I should be in Energy page$/) do
@@ -105,7 +106,8 @@ end
 
 When(/^I should be in Gas Energy page$/) do
   @gas_page = @page.gas_energy
-  #assesrtion for heading
+  expect(@gas_page.heading.text).to eql('Gas')
+
 end
 
 And(/^I enter following  details in gas energy page$/) do |table|
@@ -142,7 +144,7 @@ And(/^I click on next page button in energy usage page$/) do
   @energy_usage.next.click
 end
 
-And(/^I should be in your details page$/) do
+And(/^I should be in your preferences page$/) do
   @preferences_page = @page.preferences
   expect(@preferences_page.heading.text).to eql('Your Preferences')
 end

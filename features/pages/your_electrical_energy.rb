@@ -1,5 +1,10 @@
 module CompareEnergy
   class YourElectricity < SitePrism::Page
+    def initialize
+      wait_for_heading
+    end
+
+    element :heading, :xpath, "/html/body/div/div/main/section[1]/h2"
     element :tariff_type, "select[id='electricity-tariff-additional-info']"
 
     element :economy_7, :xpath, "//*[@id='economy-7-question']/div/div/label[1]/span"

@@ -19,7 +19,7 @@ Feature: As a end user of compare market
      |main_heating_source|kwh_usage|kwh_spend|
      |no                 |yes      |300      |
    And I click on next page button in gas page
-   And I should be in your details page
+   And I should be in your preferences page
    And I enter following  details in your details page
      |fixed_tariff|payment_mode          |email_id   | agree_terms|
      |yes         |quarterly_direct_debit|foo@bar.com| yes        |
@@ -27,7 +27,7 @@ Feature: As a end user of compare market
    Then I should be in Results page with heading "Current tariff and usage"
    And I should get the best results in "Your Results"
 
-  @now
+
   Scenario: Compare both Electricity and Gas bills when user doesn't have bill and suggest the best deal
    Given I am on Compare Energy link in Compare market website
    And I enter following  details in supplier page
@@ -39,7 +39,7 @@ Feature: As a end user of compare market
      |pre_payment_meter|economy_7|elec_spend|elec_spend_period|gas_spend|gas_spend_period|
      | yes             |no       |120       | Quarterly       |300      |Annually        |
    And I click on next page button in energy page
-   And I should be in your details page
+   And I should be in your preferences page
    And I enter following  details in your details page
      |fixed_tariff|email_id   | agree_terms|
      |yes         |foo@bar.com| yes        |
@@ -65,7 +65,7 @@ Feature: As a end user of compare market
       |beds |people|main_heating_source |temperature |insulation|main_cooking_source|visitors|
       | two |4     |electricity         | Temperate  |Wafer thin|Gas                |Hardly  |
     And I click on next page button in energy usage page
-    And I should be in your details page
+    And I should be in your preferences page
     And I enter following  details in your details page
       |fixed_tariff|email_id   | agree_terms|
       |yes         |foo@bar.com| yes        |
