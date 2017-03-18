@@ -5,6 +5,53 @@ module CompareEnergy
       wait_for_heading
     end
 
+    def get_heading
+      heading.text
+    end
+
+    def have_pre_payment_meter(value)
+      if value == "yes"
+        pre_payment_meter.click
+      else
+        no_pre_payment_meter.click
+      end
+    end
+
+    def economy7_meter(value)
+      if value == "yes"
+        economy_7.click
+      else
+        no_economy_7.click
+      end
+    end
+
+    def electricity_spend_details(spend,spend_period)
+      if spend == "I don't know"
+        dont_know_electricity_spend.click
+      else
+        electricity_spend.set spend
+        electricity_spend_period.select(spend_period)
+      end
+    end
+
+    def gas_spend_details(spend,spend_period)
+      if spend == "I don't know"
+        dont_know_gas_spend.click
+      else
+        gas_spend.set spend
+        gas_spend_period.select(spend_period)
+      end
+    end
+
+    def go_to_next_page
+      next_page.click
+    end
+
+    def go_to_back_page
+      back_page.click
+    end
+
+    private
     element :heading, :xpath, "/html/body/div/div/main/h1"
 
     element :pre_payment_meter, :xpath, "//*[@id='prepay-yes-no']/div/div/label[1]"
@@ -23,7 +70,7 @@ module CompareEnergy
 
     element :dont_know_gas_spend, :xpath, "//*[@id='gas-dont-know-check']"
 
-    element :back, "select[id='go-back']"
-    element :next, :xpath, "//*[@id='goto-your-energy']"
+    element :back_page, "select[id='go-back']"
+    element :next_page, :xpath, "//*[@id='goto-your-energy']"
   end
 end

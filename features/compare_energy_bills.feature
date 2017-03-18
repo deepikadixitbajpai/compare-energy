@@ -2,7 +2,7 @@ Feature: As a end user of compare market
   I want to compare my energy bills
   so that I can get the comparison result
 
-@now
+
  Scenario: Compare both Electricity and Gas bills when user have bill and suggest the best deal
     Given I am on Compare Energy link in Compare market website
     And I enter following  details in supplier page
