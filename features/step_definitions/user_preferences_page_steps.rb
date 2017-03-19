@@ -1,18 +1,17 @@
 When(/^I should be in your preferences page$/) do
   @preferences_page = @page.preferences
-  expect(@preferences_page.heading.text).to eql('Your Preferences')
+  expect(@preferences_page.get_heading).to eql('Your Preferences')
 end
 
 When(/^I enter following  details in your preferences page$/) do |table|
   table.hashes.each do |hash|
-    puts hash
-    @preferences_page.fixed_tariff.click
-    @preferences_page.quarterly_direct_debit.click if hash['payment_mode']
-    @preferences_page.user_email_id.set hash['email_id']
-    @preferences_page.agree_terms.click
+    @preferences_page.interested_tariff(hash['interested_tariff'])
+    @preferences_page.interested_payment_type(hash['payment_mode']) if hash['payment_mode']
+    @preferences_page.enter_user_email(hash['email_id'])
+    @preferences_page.select_agree_terms(hash['agree_terms'])
   end
 end
 
 When(/^I click on prices button$/) do
-  @preferences_page.go_to_prices.click
+  @preferences_page.go_to_prices_page
 end

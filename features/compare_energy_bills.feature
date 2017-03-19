@@ -21,8 +21,8 @@ Feature: As a end user of compare market
    And I click on next page button in gas page
    And I should be in your preferences page
    And I enter following  details in your preferences page
-     |fixed_tariff|payment_mode          |email_id   | agree_terms|
-     |yes         |quarterly_direct_debit|foo@bar.com| yes        |
+     |interested_tariff|payment_mode          |email_id   | agree_terms|
+     |Fixed tariff     |Quarterly direct debit|foo@bar.com| yes        |
    And I click on prices button
    Then I should be in Results page with heading "Current tariff and usage"
    And I should get the best results in "Your Results"
@@ -41,8 +41,8 @@ Feature: As a end user of compare market
    And I click on next page button in energy page
    And I should be in your preferences page
    And I enter following  details in your preferences page
-     |fixed_tariff|email_id   | agree_terms|
-     |yes         |foo@bar.com| yes        |
+     |interested_tariff|email_id   | agree_terms|
+     |Fixed tariff     |foo@bar.com| yes        |
    And I click on prices button
    Then I should be in Results page with heading "Current tariff and usage"
    And I should get the best results in "Your Results"
@@ -67,8 +67,8 @@ Feature: As a end user of compare market
     And I click on next page button in energy usage page
     And I should be in your preferences page
     And I enter following  details in your preferences page
-      |fixed_tariff|email_id   | agree_terms|
-      |yes         |foo@bar.com| yes        |
+      |interested_tariff|email_id   | agree_terms|
+      |Fixed tariff     |foo@bar.com| yes        |
     And I click on prices button
     Then I should be in Results page with heading "Current tariff and usage"
     And I should get the best results in "Your Results"
