@@ -54,11 +54,11 @@ module CompareEnergy
     private
     element :heading, :xpath, "/html/body/div/div/main/h1"
 
-    element :pre_payment_meter, :xpath, "//*[@id='prepay-yes-no']/div/div/label[1]"
-    element :no_pre_payment_meter, :xpath, "//*[@id='prepay-yes-no']/div/div/label[2]"
+    element :pre_payment_meter, "label[for='prepayment-yes']"
+    element :no_pre_payment_meter, "label[for='prepayment-no']"
 
-    element :economy_7, :xpath, "//*[@id='economy-7-question]/div/div/label[1]"
-    element :no_economy_7, :xpath, "//*[@id='economy-7-question']/div/div/label[2]"
+    element :economy_7, "label[for='economy-7-yes']"
+    element :no_economy_7, "label[for='economy-7-no']"
 
     element :electricity_spend, "#electricity-current-spend"
     element :electricity_spend_period, "select[id='electricity-current-spend-period']"

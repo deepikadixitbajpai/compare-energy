@@ -58,20 +58,20 @@ module CompareEnergy
 
     element :tariff_type, "select[id='electricity-tariff-additional-info']"
 
-    element :economy_7, :xpath, "//*[@id='economy-7-question']/div/div/label[1]/span"
-    element :no_economy_7, :xpath, "//*[@id='economy-7-question']/div/div/label[2]/span"
+    element :economy_7, "label[for='economy-7-yes']"
+    element :no_economy_7, "label[for='economy-7-no']"
 
     element :payment_method, "select[id='electricity-payment-method-dropdown-link']"
 
-    element :main_heating_source, :xpath, "//*[@id='electricity-main-heating-source-question']/div/div/label[1]/span"
-    element :not_main_heating_source, :xpath, "//*[@id='electricity-main-heating-source-question']/div/div/label[2]/span"
+    element :main_heating_source, "label[for='electricity-main-heating-yes']"
+    element :not_main_heating_source, "label[for='electricity-main-heating-no']"
 
-    element :kwh_usage, :xpath, "//*[@id='electricity-usage-question']/div/div/div[1]/label[1]/span"
+    element :kwh_usage, "label[for='kwhSpend']"
     element :spent_during_day, "#economy-7-day-usage"
     element :spent_during_day_period, "select[id='economy-7-day-usage-dropdown']"
     element :spent_during_night, "#economy-7-night-usage"
 
-    element :amount_usage, :xpath, "//*[@id='electricity-usage-question']/div/div/div[1]/label[2]/span"
+    element :amount_usage, "label[for='poundSpend']"
     element :amount_spend, "#electricity-spend"
     element :amount_spend_period, "select[id='electricity-spend-dropdown']"
 
