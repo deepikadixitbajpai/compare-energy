@@ -1,6 +1,6 @@
-Feature: As a end user of compare market
+Feature: As an end user of Compare Market
   I want to compare my energy bills
-  so that I can get the comparison result
+  so that I can get the best quotes and comparison results
 
 
  Scenario: Compare both Electricity and Gas bills when user have bill and suggest the best deal
@@ -26,6 +26,8 @@ Feature: As a end user of compare market
    And I click on prices button
    Then I should be in Results page with heading "Current tariff and usage"
    And I should get the best results in "Your Results"
+   And I should see the results table
+   And I should see the results details in the results table
 
 
   Scenario: Compare both Electricity and Gas bills when user doesn't have bill and suggest the best deal

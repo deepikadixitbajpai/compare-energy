@@ -53,16 +53,16 @@ module CompareEnergy
     element :not_main_heating_source, :xpath, "//*[@id='gas-main-heating-source-question']/div/div/label[2]/span"
 
     element :kwh_usage, :xpath, "//*[@id='gas-type-of-bill-question']/div/div/div[1]/label[1]/span"
-    element :kwh_spend, :xpath, "//*[@id='gas-usage']"
+    element :kwh_spend, "#gas-usage"
     element :kwh_spend_period, "select[id='type-of-Gas-bill-usage-dropdown']"
 
     element :amount_usage, :xpath, "//*[@id='gas-type-of-bill-question']/div/div/div[1]/label[2]/span"
-    element :amount_spend, :xpath, "//*[@id='gas-spend']"
+    element :amount_spend, "#gas-spend"
     element :amount_spend_period, "select[id='type-of-Gas-bill-dropdown']"
-    element :bill_day, :xpath, "//*[@id='gas-bill-day']"
+    element :bill_day, "#gas-bill-day"
 
-    element :back_page, :xpath, "//*[@id='go-back']"
-    element :next_page, :xpath, "//*[@id='goto-your-energy']"
+    element :back_page, "#go-back"
+    element :next_page, "#goto-your-energy"
   end
 
 end

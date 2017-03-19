@@ -5,16 +5,19 @@ require 'capybara/cucumber'
 require 'selenium/webdriver'
 require 'site_prism'
 
-Capybara.default_driver = :chrome
-Capybara.register_driver :chrome do |app|
-  options = {
-      :js_errors => false,
-      :timeout => 360,
-      :debug => false,
-      :inspector => false,
-  }
-  Capybara::Selenium::Driver.new(app, :browser => :chrome)
-  end
+if ENV['browser'].nil?
+  browser_name = :chrome
+else
+  browser_name = (ENV['browser']).to_sym
+end
+
+
+Capybara.register_driver browser_name do |app|
+  Capybara::Selenium::Driver.new(app, :browser => browser_name)
+end
+
+Capybara.default_driver = browser_name
+
 
 SitePrism.configure do |config|
   config.use_implicit_waits = true

@@ -89,7 +89,7 @@ module CompareEnergy
 
     element :compare_gas_electricity, "#compare-both-label"
     element :compare_gas, "#compare-gas-label"
-    element :compare_electricity, :xpath, "#compare-electricity-label"
+    element :compare_electricity, "#compare-electricity-label"
 
     element :same_electricity_gas_supplier, :xpath, "//*[@id='same-supplier-question']/div/div/label[1]/span"
     element :different_electricity_gas_supplier, :xpath, "//*[@id='same-supplier-question']/div/div/label[2]/span"
@@ -112,7 +112,7 @@ module CompareEnergy
     element :gas_other_options, "select[id='sel2']"
     element :dont_know_gas_supplier, :xpath, "//*[@id='gas-energy-suppliers-question']/div/div/div[2]/label/span"
 
-    element :next_page, :xpath, "//*[@id='goto-your-supplier-details']"
+    element :next_page, "#goto-your-supplier-details"
 
     # elements :top_six_electricity_provider, "label[for^='electricity-top-six-']"
     # elements :top_six_gas_provider, "label[for^='gas-top-six-']"

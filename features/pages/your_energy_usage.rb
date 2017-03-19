@@ -36,7 +36,7 @@ module CompareEnergy
     element :evenings_weekends_occupied, :xpath, "//*[@id='house-occupied']/div/div/label[2]/span/span"
     element :mostly_occupied, :xpath, "//*[@id='house-occupied']/div/div/label[3]/span/span"
 
-    element :next, :xpath, "//*[@id='goto-person-details-button']"
+    element :next, "#goto-person-details-button"
   end
 
 end

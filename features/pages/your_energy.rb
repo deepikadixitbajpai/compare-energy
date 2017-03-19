@@ -60,17 +60,17 @@ module CompareEnergy
     element :economy_7, :xpath, "//*[@id='economy-7-question]/div/div/label[1]"
     element :no_economy_7, :xpath, "//*[@id='economy-7-question']/div/div/label[2]"
 
-    element :electricity_spend, :xpath, "//*[@id='electricity-current-spend']"
+    element :electricity_spend, "#electricity-current-spend"
     element :electricity_spend_period, "select[id='electricity-current-spend-period']"
 
-    element :dont_know_electricity_spend, :xpath, "//*[@id='electricity-dont-know-check']"
+    element :dont_know_electricity_spend, "#electricity-dont-know-check"
 
-    element :gas_spend, :xpath, "//*[@id='gas-current-spend']"
+    element :gas_spend, "#gas-current-spend"
     element :gas_spend_period, "select[id='gas-current-spend-period']"
 
-    element :dont_know_gas_spend, :xpath, "//*[@id='gas-dont-know-check']"
+    element :dont_know_gas_spend, "#gas-dont-know-check"
 
-    element :back_page, "select[id='go-back']"
-    element :next_page, :xpath, "//*[@id='goto-your-energy']"
+    element :back_page, "#go-back"
+    element :next_page, "#goto-your-energy"
   end
 end
