@@ -24,7 +24,7 @@ module CompareEnergy
       payment_method.select(value)
     end
 
-    def main_heating_source(value)
+    def select_main_heating_source(value)
       if value == "yes"
         main_heating_source.click
       else
@@ -43,6 +43,10 @@ module CompareEnergy
       amount_usage.click
       amount_spend.set amt_spend
       amount_spend_period.select(amt_spend_period)
+    end
+
+    def billing_day()
+      bill_day.set(Date.today)
     end
 
     def go_to_next_page
@@ -75,7 +79,7 @@ module CompareEnergy
     element :amount_spend, "#electricity-spend"
     element :amount_spend_period, "select[id='electricity-spend-dropdown']"
 
-    element :bill_day, "select[id='electricity-bill-day']"
+    element :bill_day, "div.date-picker"
 
     element :back_page, "#go-back"
     element :next_page, "#goto-your-energy"

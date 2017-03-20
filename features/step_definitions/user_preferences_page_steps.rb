@@ -3,7 +3,7 @@ When(/^I should be in your preferences page$/) do
   expect(@preferences_page.get_heading).to eql('Your Preferences')
 end
 
-When(/^I enter following  details in your preferences page$/) do |table|
+When(/^I enter following details in your preferences page$/) do |table|
   table.hashes.each do |hash|
     @preferences_page.interested_tariff(hash['interested_tariff'])
     @preferences_page.interested_payment_type(hash['payment_mode']) if hash['payment_mode']

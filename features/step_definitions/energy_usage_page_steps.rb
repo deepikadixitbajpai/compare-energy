@@ -3,7 +3,7 @@ When(/^I should be in energy usage page$/) do
   expect(@energy_usage.heading.text).to eql('Your energy usage')
 end
 
-When(/^I enter following  details in energy usage page$/) do |table|
+When(/^I enter following details in energy usage page$/) do |table|
   table.hashes.each do |hash|
     @energy_usage.two_bed.click
     @energy_usage.four_occupant.click

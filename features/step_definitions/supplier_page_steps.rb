@@ -5,7 +5,7 @@ Given(/^I am on Compare Energy link in Compare market website$/) do
   expect(@energy_supplier_page).to be_displayed
 end
 
-When(/^I enter following  details in supplier page$/) do |table|
+When(/^I enter following details in supplier page$/) do |table|
   table.hashes.each do |hash|
     @energy_supplier_page.search_post_code(hash['postcode'])
     @energy_supplier_page.have_bill_handy(hash['have_bill'])

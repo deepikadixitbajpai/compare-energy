@@ -15,7 +15,7 @@ module CompareEnergy
       payment_method.select(value)
     end
 
-    def main_heating_source(value)
+    def select_main_heating_source(value)
       if value == "yes"
         main_heating_source.click
       else

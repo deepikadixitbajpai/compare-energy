@@ -3,7 +3,7 @@ When(/^I should be in Energy page$/) do
   expect(@energy_page.get_heading).to eql("Your Energy")
 end
 
-When(/^I enter following  details in energy page$/) do |table|
+When(/^I enter following details in energy page$/) do |table|
   table.hashes.each do |hash|
     @energy_page.have_pre_payment_meter(hash['pre_payment_meter'])
     @energy_page.economy7_meter(hash['economy_7'])

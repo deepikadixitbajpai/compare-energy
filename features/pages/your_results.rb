@@ -13,31 +13,32 @@ module CompareEnergy
       results_heading.text
     end
 
+    def get_cheapest_result_box
+      cheapest_result_box.find("header").text
+    end
+
     def get_cheapest_tariff_name
-      cheapest_tariff.find("div.pps-relevancy-tariff-name").text
-     # cheapest_tariff.find("div.pps-relevancy-card-inner div:nth-child(2)").text
-     # cheapest_tariff.find("div.pps-relevancy-saving-amount").text
+      cheapest_result_box.find("div.pps-relevancy-tariff-name").text
     end
 
     def get_cheapest_tariff_savings
-      cheapest_tariff.find("div.pps-relevancy-saving-amount").text
+      cheapest_result_box.find("div.pps-relevancy-card-inner div.pps-relevancy-saving-amount").text
     end
 
     def get_cheapest_tariff_estimated_annual_bill
-      cheapest_tariff.find("div.pps-relevancy-card-inner div:nth-child(2)").text
-
-
+      cheapest_result_box.all("div.pps-relevancy-card-inner>div")[1].find("strong").text
     end
 
+
     def get_first_result_row_tariff_name
-      first_result_row.find("td.supplier").text
+      result_rows[0].find("td.supplier").text
     end
 
     def get_first_result_row_tariff_savings
-      first_result_row.find("td.annual-saving strong.annual-saving-amount").text
+      result_rows[0].find("td.annual-saving strong.annual-saving-amount").text
     end
     def get_first_result_row_tariff_estimated_annual_bill
-      first_result_row.find("td.annual-saving div.estimated-annual-bill strong").text
+      result_rows[0].find("td.annual-saving div.estimated-annual-bill strong").text
     end
 
 
@@ -47,21 +48,11 @@ module CompareEnergy
 
     element :results_heading, :xpath, "/html/body/div/div/main/section[3]/h2"
 
-    element :cheapest_tariff, "#relevancy-panel"
+    element :cheapest_result_box, "#relevancy-panel"
 
-    element :first_result_row, "table.price-table tbody tr:first"
+    element :results_table, "table.price-table"
 
-
-
+    elements :result_rows, "table.price-table tbody"
 
   end
-
-  # class TariffDetails
-  #   attr_accessor name
-  #   attr_accessor savings
-  #   attr_accessor estimated_annual_bill
-  #
-  #
-  # end
-
 end
