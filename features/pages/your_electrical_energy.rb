@@ -45,10 +45,6 @@ module CompareEnergy
       amount_spend_period.select(amt_spend_period)
     end
 
-    def billing_day()
-      bill_day.set(Date.today)
-    end
-
     def go_to_next_page
       next_page.click
     end
@@ -58,7 +54,7 @@ module CompareEnergy
     end
 
     private
-    element :heading, :xpath, "/html/body/div/div/main/section[1]/h2"
+    element :heading, "section:not(.ng-hide) h2.main-heading"
 
     element :tariff_type, "select[id='electricity-tariff-additional-info']"
 

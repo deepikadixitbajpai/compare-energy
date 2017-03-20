@@ -114,14 +114,6 @@ module CompareEnergy
 
     element :next_page, "#goto-your-supplier-details"
 
-    # elements :top_six_electricity_provider, "label[for^='electricity-top-six-']"
-    # elements :top_six_gas_provider, "label[for^='gas-top-six-']"
-    #
-    # def select_provider(providers, providerName)
-    #   provider = providers.detect {|provider| provider[:'supplier-name'] == providerName}
-    #   provider.click unless provider.nil?
-    # end
-
   end
 end
 

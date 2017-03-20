@@ -2,7 +2,7 @@ module CompareEnergy
   class YourResults < SitePrism::Page
 
     def initialize
-      wait_for_results_heading(10)
+      wait_for_cheapest_result_box(10)
     end
 
     def get_current_tariff_heading
@@ -29,7 +29,6 @@ module CompareEnergy
       cheapest_result_box.all("div.pps-relevancy-card-inner>div")[1].find("strong").text
     end
 
-
     def get_first_result_row_tariff_name
       result_rows[0].find("td.supplier").text
     end
@@ -41,14 +40,12 @@ module CompareEnergy
       result_rows[0].find("td.annual-saving div.estimated-annual-bill strong").text
     end
 
-
-
     private
-    element :current_tariff_heading, :xpath, "/html/body/div/div/main/section[1]/div/h2"
-
-    element :results_heading, :xpath, "/html/body/div/div/main/section[3]/h2"
+    element :current_tariff_heading, "section.personal-projection h2"
 
     element :cheapest_result_box, "#relevancy-panel"
+
+    element :results_heading, "section.your-results-with-filters h2"
 
     element :results_table, "table.price-table"
 

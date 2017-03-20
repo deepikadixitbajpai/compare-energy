@@ -68,8 +68,8 @@ Feature: As an end user of Compare Market
     And I click on next page button in energy page
     And I should be in energy usage page
     And I enter following details in energy usage page
-      |beds |people|main_heating_source |temperature |insulation|main_cooking_source|visitors|
-      | two |4     |electricity         | Temperate  |Wafer thin|Gas                |Hardly  |
+      |beds|people|main_heating_source |temperature |insulation|main_cooking_source|visitors     |
+      |1-2 |3-4   |electricity         | Temperate  |Wafer thin|Gas                |Hardly ever  |
     And I click on next page button in energy usage page
     And I should be in your preferences page
     And I enter following details in your preferences page

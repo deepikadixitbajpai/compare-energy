@@ -22,8 +22,6 @@ Note:
 
 By default tests will run in Chrome but Chromedriver must be installed and added to PATH. Chromedriver can be downloaded from here: https://sites.google.com/a/chromium.org/chromedriver/getting-started
 
-If you don't want to download chromedriver then you can run tests in firefox for which no download is required, by suffixing the above commands by 'browser=firefox'. This will be slower than Chrome.
-
 
 
 

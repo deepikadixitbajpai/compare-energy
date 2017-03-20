@@ -5,18 +5,11 @@ require 'capybara/cucumber'
 require 'selenium/webdriver'
 require 'site_prism'
 
-if ENV['browser'].nil?
-  browser_name = :chrome
-else
-  browser_name = (ENV['browser']).to_sym
+Capybara.register_driver :chrome do |app|
+  Capybara::Selenium::Driver.new(app, :browser => :chrome)
 end
 
-
-Capybara.register_driver browser_name do |app|
-  Capybara::Selenium::Driver.new(app, :browser => browser_name)
-end
-
-Capybara.default_driver = browser_name
+Capybara.default_driver = :chrome
 
 
 SitePrism.configure do |config|

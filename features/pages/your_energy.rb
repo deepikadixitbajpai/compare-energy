@@ -52,7 +52,7 @@ module CompareEnergy
     end
 
     private
-    element :heading, :xpath, "/html/body/div/div/main/h1"
+    element :heading, "h1.main-heading"
 
     element :pre_payment_meter, "label[for='prepayment-yes']"
     element :no_pre_payment_meter, "label[for='prepayment-no']"

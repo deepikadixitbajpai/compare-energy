@@ -12,7 +12,7 @@ Then(/^I should get the best results table with heading "([^"]*)"$/) do |heading
 end
 
 Then(/^the cheapest result box quote should be same as first quote in results table$/) do
+  expect(@results_page.get_cheapest_tariff_name).to include(@results_page.get_first_result_row_tariff_name)
   expect(@results_page.get_cheapest_tariff_savings).to eql(@results_page.get_first_result_row_tariff_savings)
   expect(@results_page.get_cheapest_tariff_estimated_annual_bill).to eql(@results_page.get_first_result_row_tariff_estimated_annual_bill)
-  expect(@results_page.get_cheapest_tariff_name).to include(@results_page.get_first_result_row_tariff_name)
 end

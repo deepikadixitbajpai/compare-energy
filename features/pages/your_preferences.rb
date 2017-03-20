@@ -55,7 +55,7 @@ module CompareEnergy
     end
 
     private
-    element :heading, :xpath, "/html/body/div/div/main/div/div/h2"
+    element :heading, "main div div h2.main-heading"
 
     element :fixed_tariff, "label[for='pre-select-fixed']"
     element :variable_tariff, "label[for='pre-select-variable']"

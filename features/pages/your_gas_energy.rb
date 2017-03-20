@@ -45,7 +45,7 @@ module CompareEnergy
     end
 
     private
-    element :heading, :xpath, "/html/body/div/div/main/section[2]/h2"
+    element :heading, "section:not(.ng-hide) h2.main-heading"
     element :tariff_type, "select[id='gas-tariff-additional-info']"
     element :payment_method, "select[id='gas-payment-method-dropdown-link']"
 
